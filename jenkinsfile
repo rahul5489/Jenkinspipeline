@@ -1,0 +1,14 @@
+node 
+{
+def abc
+stage ("checkout the source code")
+{
+git 'https://github.hpe.com/prpdxp/STA.git'
+abc = tool 'Maven3.5.4'
+}
+stage ("build the artifact")
+{
+sh "'${abc}/bin/mvn' package"
+}
+ 
+}
